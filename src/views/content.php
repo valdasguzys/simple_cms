@@ -8,23 +8,21 @@
         <?php //retrieves page titles from DB for site navigation
         $pages = $entityManager->getRepository('Page')->findAll();
         foreach($pages as $p) {
-            echo '<li><a href="' . $_SERVER['REQUEST_URI'] . '/?page=' . $p->getId(). '">' . $p->getTitle() . '</a></li>'; 
+            echo '<li><a href="?page=' . $p->getId(). '">' . $p->getTitle() . '</a></li>'; 
         } ?>
         </ul>    
     </div>            
     
-    
-    <?php 
-    echo 'veikia';
-    if (isset($_GET['page'])) {
-    
-    // $page = $entityManager->find('Page', $_GET['page']);
-    // echo $page->getTitle();
-    
-    }
-    
-?>
+    <div>
+        <?php //retrieves content by page id
+            if (isset($_GET['page'])) {
 
+            $page = $entityManager->find('Page', $_GET['page']);
+            $page != NULL ? 
+            print '<br>' . $page->getTitle() . '<br>' . $page->getContent() . ' ' : '';
+            } 
+        ?>
+    </div>
 
 
 

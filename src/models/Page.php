@@ -29,6 +29,11 @@ class Page {
      */
     protected $content;
 
+    public function __construct($title, $content) {
+        $this->title = $title;
+        $this->content = $content;
+    }
+
     public function getId() {
         return $this->id;
     }
