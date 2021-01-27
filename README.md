@@ -1,7 +1,8 @@
 # simple_cms
 
 TO DO:
-fix update functionality
-add authetication / login page
-add styles
-clean up
+
+<li>fix update functionality
+<li>add authetication / login page
+<li>add styles
+<li>clean up
