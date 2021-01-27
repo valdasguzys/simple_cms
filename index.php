@@ -31,8 +31,14 @@ switch ($request) {
     case isset($_GET['update']):
         require __DIR__ . '/src/views/admin.php';
         break;
-    case $root_url . 'admin' :
+    case $_SESSION['logged_in'] == true:
         require __DIR__ . '/src/views/admin.php';
+        break;
+    case isset($_GET['action']):
+        require __DIR__ . '/src/views/login.php';
+        break;
+    case $root_url . 'admin' :
+        require __DIR__ . '/src/views/login.php';
         break;
     default:
         http_response_code(404);

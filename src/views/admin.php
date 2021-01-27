@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // reloads the current page
 function redirect_to_root(){
     header("Location: " . parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH));
@@ -27,12 +27,21 @@ if(isset($_GET['delete'])){
 if(isset($_POST['update'])){
     $page = $entityManager->find('Page', $_POST['update']);
     $page->setTitle($_POST['update_title']);
-    $page->setContent($_POST['update_content']); 
+    $page->setContent($_POST['update_content']);
     $entityManager->flush();
     redirect_to_root();
 }
 ?>
-    
+<?php //if logded in show content
+     ?>
+
+    <ul>
+    <li>admin</li>
+    <li>website</li>
+    <li><a href = "admin.php?action=logout">logout</a></li>
+    </ul>
+
+
     <?php //display this form id 'new page' was pressed
         if(isset($_POST['newpage'])) { ?>
         <form action="" method="POST">
@@ -53,11 +62,11 @@ if(isset($_POST['update'])){
          ?>
     
         <form action="" method="POST">
-            <input type="hidden" name="id" value="<?php $page->getId() ?>">
+            <input type="hidden" name="id" value="<?php echo $page->getId() ?>">
             <div><label>Update Page</label></div>
-            <div><input type="text" name="update_title" placeholder="Enter project title" value="<?php $page->getTitle() ?>"></div>
-            <div><textarea rows="10" cols="30" name="update_content" placeholder="Add some content" value="<?php $page->getContent()  ?>"></textarea></div>
-            <button type="submit" name="Update">Update</button>            
+            <div><input type="text" name="update_title" placeholder="Enter project title" value="<?php echo $page->getTitle() ?>"></div>
+            <div><textarea rows="10" cols="30" name="update_content" placeholder="Add some content" value=""><?php echo $page->getContent()  ?></textarea></div>
+            <button type="submit" name="update">Update</button>            
         </form>
 
         
@@ -86,8 +95,10 @@ if(isset($_POST['update'])){
             <button type="submit" name="newpage">New Page</button>         
         </form>
         <?php 
-    } 
-}?>
+        } 
+    }    
+
+?>
 
      
 
