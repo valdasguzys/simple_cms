@@ -1,0 +1,20 @@
+{
+    "name": "pilie/simple_cms",
+    "description": "PHP sprint 3 task - simple CMS",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Valdas Gužys",
+            "email": "valdas.guzys@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.8"
+    },
+
+    "autoload": {
+        "files": [
+			"src/models/Page.php"
+		]
+    }
+}
