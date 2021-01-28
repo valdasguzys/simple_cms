@@ -46,6 +46,3 @@ switch ($request) {
         break;
 }
 ?>
-
-<a href="admin">admin</a>
-<a href="content">content</a>

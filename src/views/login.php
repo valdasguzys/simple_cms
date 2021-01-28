@@ -1,5 +1,13 @@
-<!-- LOGIN LOGIC -->
+<?php 
+    require 'header.php';
+    ?>
+
+
+
 <?php
+    // LOGIN LOGIC
+
+    session_start();
     $msg = '';
     if (isset($_POST['login']) 
         && !empty($_POST['username']) 
@@ -17,21 +25,25 @@
            
         }
     }
-    
-
-
 ?>
-<?php if($_SESSION['logged_in'] == true) {
+
+
+<?php //LOGIN FORM
+    if($_SESSION['logged_in'] == true) { 
+
     require_once 'admin.php';
-} else { ?>
-        <div>
+
+        } else { ?>
+
+        <div class="container">
             <form action="" method="POST">
                 <h4><?php echo $msg; ?></h4>
-                <input type="text" name="username" placeholder="username = admin" required autofocus></br>
-                <input type="password" name="password" placeholder="password = admin" required></br>
-                <button type="submit" name="login">Login</button>
+                <input class="form-control shadow bg-white rounded w-25" type="text" name="username" placeholder="username = admin" required autofocus></br>
+                <input class="form-control shadow bg-white rounded w-25" type="password" name="password" placeholder="password = admin" required></br>
+                <button class="btn btn-outline-primary" type="submit" name="login">Login</button>
             </form>
-        </div>  
+        </div>
+
         <?php } ?>
 
 
@@ -45,4 +57,4 @@
         unset($_SESSION['password']);
         unset($_SESSION['logged_in']);
     }
-    ?>
+?>

@@ -2,7 +2,7 @@
 
 TO DO:
 
-<li>fix update functionality
-<li>add authetication / login page
-<li>add styles
+<li>add 'cancel' button in 'new page' and 'update' forms
+<li>tune the styles
 <li>clean up
+<li>readme file
