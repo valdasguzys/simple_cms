@@ -37,13 +37,13 @@
 
         <div class="container">
             <form action="" method="POST">
-                <h4><?php echo $msg; ?></h4>
+                <label class="mt-3">Enter username and password</label>
                 <input class="form-control shadow bg-white rounded w-25" type="text" name="username" placeholder="username = admin" required autofocus></br>
                 <input class="form-control shadow bg-white rounded w-25" type="password" name="password" placeholder="password = admin" required></br>
                 <button class="btn btn-outline-primary" type="submit" name="login">Login</button>
+                <h4><?php echo $msg; ?></h4>
             </form>
         </div>
-
         <?php } ?>
 
 
