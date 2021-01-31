@@ -1,19 +1,26 @@
 <?php
 include_once "bootstrap.php";
 
+function getPath($request){
+    $path = explode('/', $request);
+    return $path[count($path) - 1];
+}
+
 
 $request = $_SERVER['REQUEST_URI'];
-$root_url = '/simple_cms/';
+
+$root_url = getPath($request);
+
 //$request turi sutapti su case'u
 switch ($request) {
 
-    case $root_url . '/' :
+    case $root_url == '/' :
         require __DIR__ . '/src/views/content.php';
         break;
-    case $root_url . '' :
+    case $root_url == '' :
         require __DIR__ . '/src/views/content.php';
         break;
-    case $root_url . 'content' :
+    case $root_url == 'content' :
         require __DIR__ . '/src/views/content.php';
         break;
     case isset($_GET['page']) and $_GET['page'] != "":
@@ -37,7 +44,7 @@ switch ($request) {
     case isset($_GET['action']):
         require __DIR__ . '/src/views/login.php';
         break;
-    case $root_url . 'admin' :
+    case $root_url == 'admin' :
         require __DIR__ . '/src/views/login.php';
         break;
     default:
