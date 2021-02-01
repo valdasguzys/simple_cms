@@ -18,8 +18,8 @@
 <li>install composer package manager <a href="https://getcomposer.org/download/">https://getcomposer.org/download/</a></li>
 <li>clone simple_cms repository to your www folder</li>
 <li>in repository folder initialise (considering composer it's installed localy in www folder) <pre>php ../composer.phar init</pre></li>
-<li>install <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/tutorials/getting-started.html
-">doctrine</a> (required for ORM). Terminal command: <pre>..php composer.phar require doctrine/orm</pre>
+<!-- <li>install <a href="https://www.doctrine-project.org/projects/doctrine-orm/en/2.7/tutorials/getting-started.html
+">doctrine</a> (required for ORM). Terminal command: <pre>..php composer.phar require doctrine/orm</pre> -->
 <li>create database called simple_cms</li>
 <li>to create database tables: <pre>vendor\bin\doctrine orm:schema-tool:update --force --dump-sql</pre></li> 
 <li>open localhost/simple_cms/admin in your browser. Username and password is <i>admin, admin</i>.</li>
